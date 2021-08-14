@@ -1,16 +1,15 @@
 <?php
 //              /krud/index.php
-
+include('./funktions.php');
 
 session_start();
+
 if (!isset($_SESSION['zoo'])){
     $_SESSION['zoo'] = [];
     $_SESSION['id'] = 1;
 }
-/*echo"<pre>";
-print_r($_SESSION['zoo']);
-echo"</pre>";*/
-// $_SESSION['id'] = 1;
+//    surandom konkretu gyvuna
+
 if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['id'])) {
 foreach ($_SESSION['zoo'] as $kitas) {
     if($kitas['id'] == $_GET['id']){
@@ -19,6 +18,8 @@ break;
     }  
 }
 }
+//      sukuriam nauja gyvuna
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['id'])) {
    //$givunas = [];
    $givunas['id'] = $_SESSION['id'];
