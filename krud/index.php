@@ -1,63 +1,34 @@
 <?php
 //              /krud/index.php
-include('./funktions.php');
-
-session_start();
-
-if (!isset($_SESSION['zoo'])){
-    $_SESSION['zoo'] = [];
-    $_SESSION['id'] = 1;
-}
-//    surandom konkretu gyvuna
+include('./functions.php');
+//     init(); sukuria sessija
+init();
+//    surandom konkretu gyvuna function edit();
 
 if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['id'])) {
-foreach ($_SESSION['zoo'] as $kitas) {
-    if($kitas['id'] == $_GET['id']){
-        $givunas = $kitas;
-break;
-    }  
+    $givunas = edit();
 }
-}
-//      sukuriam nauja gyvuna
+//      sukuriam nauja gyvuna  function store();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['id'])) {
-   //$givunas = [];
-   $givunas['id'] = $_SESSION['id'];
-   $givunas['gyvunai'] = $_POST['gyvunai'];
-   $givunas['imia'] = $_POST['imia'];
-   $givunas['amzius'] = $_POST['amzius'];
-   $_SESSION['id']++;
-   $_SESSION['zoo'][] = $givunas;
+   store();
    header("location:./index.php");
    die;
 }
-// migtukas DELETE logika.
+//      migtukas DELETE logika,function destroy();
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['gyvunai'])){
-    foreach ($_SESSION['zoo'] as $key => &$givunas) {
-        if ($givunas['id'] == $_POST['id']) {
-           unset($_SESSION['zoo'][$key]);
+    destroy();
+    header("location:./index.php");
+    die;  
+}
+//      migtuko ATNAUJINTI GYVUNA logika, function update();
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['id'])) {
+    update();
     header("location:./index.php");
     die;
 }
-    }
-}
-
-
-// migtuko ATNAUJINTI GYVUNA logika.
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['id'])) {
-   foreach ($_SESSION['zoo'] as  &$givunas) {
-     if ($givunas['id'] ==$_POST['id']) {
-         $givunas['gyvunai'] = $_POST['gyvunai'];
-         $givunas['imia'] = $_POST['imia'];
-         $givunas['amzius'] = $_POST['amzius'];
-         header("location:./index.php");
-        die;
-     }
-   }
-}
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -128,9 +99,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['id'])) {
 <!--******************************************************************************-->
 
 </tr>
-
-
-
 <?php } ?>
 </table>
 </body>
