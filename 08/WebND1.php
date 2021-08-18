@@ -1,6 +1,6 @@
 <?php
 /*       WebND1.php
-Sukurti puslapį su juodu fonu ir su dviem linkais (nuorodom) į save.
+ 1.Sukurti puslapį su juodu fonu ir su dviem linkais (nuorodom) į save.
 Viena nuoroda su failo vardu, o kita nuoroda su failo vardu ir GET
 duomenų  perdavimo metodu perduodamu kintamuoju color=1.
 Padaryti taip, kad paspaudus ant nuorodos su perduodamu kintamuoju
@@ -11,11 +11,6 @@ $spalva = 'black';
 if (isset($_GET['color'])) {
     $spalva = 'red';
 }
-
-
-
-
-
 ?>
 
 <!DOCTYPE html>

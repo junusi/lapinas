@@ -6,8 +6,6 @@
  o PHP kodas (ne tiesiogiai html tagas!) naršyklę peradresuotų į kitą 
  puslapį (iš raudono į mėlyną ir atvirkščiai).
 */
-
-
 if (isset($_GET['go'])) {
     header("location:./blue.php");
     die; 

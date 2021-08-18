@@ -1,6 +1,6 @@
 <?php
 
-//                               /json/index.php
+//                           lapinas/json/index.php
 // iskeliam funkcijas i atskira faila
 // include_once __DIR__.'/functijon.php';// sita komanda turi buti visada virsuja
 require_once __DIR__.'/functijon.php';

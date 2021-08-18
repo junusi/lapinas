@@ -3,7 +3,7 @@
 echo'<hr>';
 //1Uzduotis.
 
-/*$arraylabas = [];
+$arraylabas = [];
 foreach (range(0,30) as $key => $value) {
     $arraylabas[] = rand(20,40);
     
@@ -21,7 +21,7 @@ if ($i < 30) {
 }
 echo'<br>';
 count($arraylabas);// funkcija kuri skaiciuoja kiek masive yra elementu.
-echo (count($arraylabas));*/
+echo (count($arraylabas));
 //2.
 $mas = [];
 $mas1 = [];

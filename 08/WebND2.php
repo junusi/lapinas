@@ -11,12 +11,6 @@ $spalva = 'black';
 if (isset($_GET['color'])) {
     $spalva = $_GET['color'];
 }
-
-
-
-
-
-
 ?>
 
 <!DOCTYPE html>

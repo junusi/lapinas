@@ -1,5 +1,5 @@
 <?php
-//              /krud/index.php
+
 include('./functions.php');
 //     init(); sukuria sessija
 init();
@@ -11,9 +11,11 @@ if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['id'])) {
 //      sukuriam nauja gyvuna  function store();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['id'])) {
-   store();
+    function store(){
+     store();
    header("location:./index.php");
    die;
+}
 }
 //      migtukas DELETE logika,function destroy();
 
@@ -92,7 +94,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['id'])) {
     <!-- migtukas DELETE     -->
     <td>
         <form action="" method="post">
-            <input type="hidden" name="id" value="<?= $givunas['id'] ?>">edit">
+            <input type="hidden" name="id" value="<?= $givunas['id'] ?>">
            <button class="btn btn-danger" type="submit">DELETE</button> 
         </form>
     </td>

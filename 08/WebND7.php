@@ -10,8 +10,6 @@ $spalva = 'green';
     header("location:./WebND7.php");
     die;
  }
-
-
 ?>
 
 <!DOCTYPE html>

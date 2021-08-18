@@ -6,9 +6,6 @@ $spalva = 'green';
 if (isset($_GET['color'])) {
     $spalva = $_GET['color'];
 }
-
-
-
 ?>
 
 <!DOCTYPE html>
