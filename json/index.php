@@ -48,8 +48,8 @@ label{
 </style>
 </head>
 <body>
-    <h2>Juodeij:<?= $bebrai['juodi'] ?></h2>
-    <h2>Rudeij:<?= $bebrai['rudi'] ?></h2>
+    <h2>Juodeij:<?= getBebrai()['juodi'] ?></h2>
+    <h2>Rudeij:<?= getBebrai()['rudi'] ?></h2>
     <form action="http://localhost:8080/lapinas/json/index.php" method="post">
  <div>
      <label>Prideti juodus</label>
