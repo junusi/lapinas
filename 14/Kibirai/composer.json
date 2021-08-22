@@ -1,0 +1,13 @@
+{
+    "name": "karolis/kibirai",
+    "description": "Bla bla bla",
+    "authors": [
+        {
+            "name": "junusi",
+            "email": "82803045+junusi@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "ramsey/uuid": "^4.2"
+    }
+}

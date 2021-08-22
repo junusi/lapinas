@@ -1,30 +1,22 @@
 <?php
 require __DIR__.'/Pinigine.php';
 
-$Pinigine = new Pinigine();
+$pinigine = new Pinigine();
 
-$kiekis = 0;
-$Pinigine->ideti($kiekis);
-$PopieriniaiPinigai = 0;
-$MetaliniaiPinigai = 0;
- for ($i=0; $i < 5; $i++) {
+for($i = 0;$i < 10;$i++){
     $kiekis = rand(1,10);
-if ($kiekis <= 2) {
-    $MetaliniaiPinigai += $Pinigine->ideti($kiekis);
-} else {
-    $PopieriniaiPinigai += $Pinigine->ideti($kiekis);
+    echo$kiekis.'<br>';
+    $pinigine->ideti($kiekis);
 }
- }
+
+echo'PopieriniaiPinigai ir metaliniaiPinigai sumą = '.($pinigine->skaiciuoti()).'<br>';
+echo'<br>';
+var_dump($pinigine);
 
 
 
    
-echo'<br>';
-echo $Pinigine->skaiciuoti();
 
-echo"<pre>";
-var_dump($Pinigine);
-echo'<br>';
 
 
 

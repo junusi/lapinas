@@ -11,38 +11,35 @@
  Didžiausią pripilti pilną ir tada ją ispilti į mažesnę stiklinę, 
  o mažesnę į dar mažesnę.
 */
-class Stikline{
-
-private $turys;
-private $kiekis = 0;
-
-
-public function __construct($turys)
-{
-    $this->turys = $turys;
-}
-
-public function ipilti($kiekis)
-{
-    if ($this->turys < $kiekis) {
-      
-       return $this->kiekis = $this->turys;
-    }
-    return $this->kiekis += $kiekis;
-}
-
-   public function ispilti()
-{
 
   
+class Stikline
+{
+private $turis;
+private $kiekis;
+public function __construct($turis)
+{
+    $this->turis = $turis; 
+}
+public function ipilti($kiekis)
+{
+if(($this->kiekis + $kiekis) > $this->turis ){
+    $this->kiekis = $this->turis;
+    return $this->kiekis;
+}else{
+    $this->kiekis =+ $kiekis;
     return $this->kiekis;
 }
 
 }
-    
+public function ispilti()
+{ 
+    $this->kiekis -= $this->kiekis;
+    return $this->kiekis;
+}
 
 
-
+}
 
 
 

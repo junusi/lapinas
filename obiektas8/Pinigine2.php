@@ -4,31 +4,36 @@
  kad būtų galima skaičiuoti kiek piniginėje 
  yra monetų ir kiek banknotų. Parašyti metodą monetos(), 
  kuris skaičiuotų kiek yra piniginėje monetų ir 
- metoda banknotai() - popierinių pinigų skaičiavim
+ metoda banknotai() - popierinių pinigų skaičiavimui.
 */
 class Pinigine{
 
     private $popieriniaiPinigai ;
     private $metaliniaiPinigai; 
-public function monetos()
-   { for ($i=0; $i < 5; $i++) {
-        $kiekis = rand(1,5);  
-   if ($kiekis <= 2) {
-       $sumMetaliniaiPinigai += $kiekis;
-   } 
+private $monetu;
+private $banknotu;
+    public function ideti($kiekis)
+    {  
+       if ($kiekis <= 2) {
+        $this->metaliniaiPinigai += $kiekis;
+        $this->monetu++;
+       } else {
+        $this->popieriniaiPinigai += $kiekis;
+        $this->banknotu++;  
+       }  
     }
+public function monetos()
+  {
+      echo 'piniginėje monetų  yra '.$this->monetu.'<br>';
    }
 
    public function banknotai()
-   {for ($i=0; $i < 5; $i++) {
-    $kiekis = rand(1,5);  
-if ($kiekis <= 2) {
-   $sumMetaliniaiPinigai += $kiekis;
-} 
+  
+{ 
+   echo 'piniginėje banknotu  yra '. $this->banknotu.'<br>';
+
 }
-
-   }
-
+   
 }
 
 
