@@ -11,8 +11,33 @@
  Didžiausią pripilti pilną ir tada ją ispilti į mažesnę stiklinę, 
  o mažesnę į dar mažesnę.
 */
+// destytojo sprendimas
+class Stikline {
 
-  
+    private $turis, $kiekis = 0;
+
+    public function __construct($turis) 
+    {
+        $this->turis = $turis;
+    }
+
+
+    public function ipilti($kiekis)
+    {
+        $this->kiekis = min($this->turis, $this->kiekis + $kiekis);
+        return $this;
+    }
+
+    public function ispilti()
+    {
+        $kiekis = $this->kiekis;
+        $this->kiekis = 0;
+        return $kiekis;
+    }
+
+}
+
+// Mano sprendimas  
 class Stikline
 {
 private $turis;

@@ -202,7 +202,38 @@ echo'Uždavinys Nr 6.'.'<br>';
      print_r($masyvas5).'<br>';
 //septinta uzduotis
 echo'Uždavinys Nr 7.'.'<br>';
+// Sprendimas Nr:1
+$masyvas = [];
+do {
+    $uid = rand(1, 50);
+    foreach ($masyvas as $user) {
+        if ($user['user_id'] == $uid) {
+            continue 2;
+        }
+    }
+    $masyvas[] = [
+        'user_id' => $uid,
+        'place_in_row' => rand(0, 100)
+    ];
+} while(count($masyvas) < 30);
 
+
+foreach ($masyvas as &$user) {
+
+    $user['name'] = '';
+    $user['surname'] = '';
+    foreach(range(1, rand(5, 15)) as $_) {
+        $user['name'] .= range('a', 'z')[rand(0, 25)];
+    }
+    foreach(range(1, rand(5, 15)) as $_) {
+        $user['surname'] .= range('a', 'z')[rand(0, 25)];
+    }
+}
+
+
+print_r($masyvas);
+
+// sprendimas Nr:2
 function nameSurname($parametras)
 {$masyvasRaides = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 $i = 0;

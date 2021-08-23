@@ -1,4 +1,3 @@
-  
 <?php
 namespace Kosmosas;
 
@@ -16,7 +15,7 @@ abstract class Antena extends Bliudas implements B2, Radijus {
 
     public function ijungti(string $f) 
     {
-        _d('Antena Įjungtas');
+        echo('Antena Įjungtas');
     }
 
     public function radio(){}

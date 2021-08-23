@@ -1,26 +1,28 @@
 <?php
+namespace Start;
 
+use Kosmosas\Antena;
 
-class TV 
+class TV extends Antena
 {
     public static $programs = [1 => 'LRT', 2 => 'TV7', 3 => 'TV Polonia'];
-    private $nowWatching;
-
     
+
+    public $etikete = 'Televizorius';
 
     
     public $owner; // ==> $this->owner
     public $chanel;
     private $in; // planuojam gal 42 o gal 55 o gal dar kazka
     
-   
+    private $nowWatching;
 
     public function ijungti($bilekas) 
     {
-        echo('TV Įjungtas').'<br>';
+        echo('TV Įjungtas');
     }
 
-    public function __construct($in)
+    public function __construct($in, $dk = 0)
     {
         $this->in = $in;
     }
